@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1 id="turn">X's Turn</h1>
+        <div id="gameBoard">
+                <div id="grid1" class="grid">
+                        <div class="cell grid1 A1" id="grid1-A1"></div>
+                        <div class="cell grid1 A2" id="grid1-A2"></div>
+                        <div class="cell grid1 A3" id="grid1-A3"></div>
+                    
+                        <div class="cell grid1 B1" id="grid1-B1"></div>
+                        <div class="cell grid1 B2" id="grid1-B2"></div>
+                        <div class="cell grid1 B3" id="grid1-B3"></div>
+                  
+                        <div class="cell grid1 C1" id="grid1-C1"></div>
+                        <div class="cell grid1 C2" id="grid1-C2"></div>
+                        <div class="cell grid1 C3" id="grid1-C3"></div>
+                   
+                </div>
+                <div id="grid2" class="grid">
+                    
+                        <div class="cell grid2 A1" id="grid2-A1"></div>
+                        <div class="cell grid2 A2" id="grid2-A2"></div>
+                        <div class="cell grid2 A3" id="grid2-A3"></div>
+                    
+                    
+                        <div class="cell grid2 B1" id="grid2-B1"></div>
+                        <div class="cell grid2 B2" id="grid2-B2"></div>
+                        <div class="cell grid2 B3" id="grid2-B3"></div>
+                    
+                    
+                        <div class="cell grid2 C1" id="grid2-C1"></div>
+                        <div class="cell grid2 C2" id="grid2-C2"></div>
+                        <div class="cell grid2 C3" id="grid2-C3"></div>
+                    
+                </div>
+                <div id="grid3" class="grid">
+                    
+                        <div class="cell grid3 A1" id="grid3-A1"></div>
+                        <div class="cell grid3 A2" id="grid3-A2"></div>
+                        <div class="cell grid3 A3" id="grid3-A3"></div>
+                    
+                    
+                        <div class="cell grid3 B1" id="grid3-B1"></div>
+                        <div class="cell grid3 B2" id="grid3-B2"></div>
+                        <div class="cell grid3 B3" id="grid3-B3"></div>
+                    
+                    
+                        <div class="cell grid3 C1" id="grid3-C1"></div>
+                        <div class="cell grid3 C2" id="grid3-C2"></div>
+                        <div class="cell grid3 C3" id="grid3-C3"></div>
+                    
+                </div>
+                <div id="grid4" class="grid">
+                    
+                        <div class="cell grid4 A1" id="grid4-A1"></div>
+                        <div class="cell grid4 A2" id="grid4-A2"></div>
+                        <div class="cell grid4 A3" id="grid4-A3"></div>
+                    
+                    
+                        <div class="cell grid4 B1" id="grid4-B1"></div>
+                        <div class="cell grid4 B2" id="grid4-B2"></div>
+                        <div class="cell grid4 B3" id="grid4-B3"></div>
+                    
+                    
+                        <div class="cell grid4 C1" id="grid4-C1"></div>
+                        <div class="cell grid4 C2" id="grid4-C2"></div>
+                        <div class="cell grid4 C3" id="grid4-C3"></div>
+                    
+                </div>
+                <div id="grid5" class="grid">
+                    
+                        <div class="cell grid5 A1" id="grid5-A1"></div>
+                        <div class="cell grid5 A2" id="grid5-A2"></div>
+                        <div class="cell grid5 A3" id="grid5-A3"></div>
+                    
+                    
+                        <div class="cell grid5 B1" id="grid5-B1"></div>
+                        <div class="cell grid5 B2" id="grid5-B2"></div>
+                        <div class="cell grid5 B3" id="grid5-B3"></div>
+                    
+                    
+                        <div class="cell grid5 C1" id="grid5-C1"></div>
+                        <div class="cell grid5 C2" id="grid5-C2"></div>
+                        <div class="cell grid5 C3" id="grid5-C3"></div>
+                    
+                </div>
+                <div id="grid6" class="grid">
+                    
+                        <div class="cell grid6 A1" id="grid6-A1"></div>
+                        <div class="cell grid6 A2" id="grid6-A2"></div>
+                        <div class="cell grid6 A3" id="grid6-A3"></div>
+                    
+                    
+                        <div class="cell grid6 B1" id="grid6-B1"></div>
+                        <div class="cell grid6 B2" id="grid6-B2"></div>
+                        <div class="cell grid6 B3" id="grid6-B3"></div>
+                    
+                    
+                        <div class="cell grid6 C1" id="grid6-C1"></div>
+                        <div class="cell grid6 C2" id="grid6-C2"></div>
+                        <div class="cell grid6 C3" id="grid6-C3"></div>
+                    
+                </div>
+                <div id="grid7" class="grid">
+                    
+                        <div class="cell grid7 A1" id="grid7-A1"></div>
+                        <div class="cell grid7 A2" id="grid7-A2"></div>
+                        <div class="cell grid7 A3" id="grid7-A3"></div>
+                    
+                    
+                        <div class="cell grid7 B1" id="grid7-B1"></div>
+                        <div class="cell grid7 B2" id="grid7-B2"></div>
+                        <div class="cell grid7 B3" id="grid7-B3"></div>
+                    
+                    
+                        <div class="cell grid7 C1" id="grid7-C1"></div>
+                        <div class="cell grid7 C2" id="grid7-C2"></div>
+                        <div class="cell grid7 C3" id="grid7-C3"></div>
+                    
+                </div>
+                <div id="grid8" class="grid">
+                    
+                        <div class="cell grid8 A1" id="grid8-A1"></div>
+                        <div class="cell grid8 A2" id="grid8-A2"></div>
+                        <div class="cell grid8 A3" id="grid8-A3"></div>
+                    
+                    
+                        <div class="cell grid8 B1" id="grid8-B1"></div>
+                        <div class="cell grid8 B2" id="grid8-B2"></div>
+                        <div class="cell grid8 B3" id="grid8-B3"></div>
+                    
+                    
+                        <div class="cell grid8 C1" id="grid8-C1"></div>
+                        <div class="cell grid8 C2" id="grid8-C2"></div>
+                        <div class="cell grid8 C3" id="grid8-C3"></div>
+                    
+                </div>
+                <div id="grid9" class="grid">
+                    
+                        <div class="cell grid9 A1" id="grid9-A1"></div>
+                        <div class="cell grid9 A2" id="grid9-A2"></div>
+                        <div class="cell grid9 A3" id="grid9-A3"></div>
+                    
+                    
+                        <div class="cell grid9 B1" id="grid9-B1"></div>
+                        <div class="cell grid9 B2" id="grid9-B2"></div>
+                        <div class="cell grid9 B3" id="grid9-B3"></div>
+                    
+                    
+                        <div class="cell grid9 C1" id="grid9-C1"></div>
+                        <div class="cell grid9 C2" id="grid9-C2"></div>
+                        <div class="cell grid9 C3" id="grid9-C3"></div>
+                    
+                </div>
+            
+        </div>
+        
+    </main>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <script src="app.js" type="text/javascript"></script>
+</body>
+</html>
