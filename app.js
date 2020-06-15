@@ -116,15 +116,19 @@ let allowedRegion = '';
 $('#gameBoard').on('click', '.cell', function() {
 	event.preventDefault();
 
-	let tempSquare = $(this).attr('id');
-	let square = `#${tempSquare}`;
-	let tempLoc = $(this).attr('class');
-	let loc = tempLoc.substr(tempLoc.length - 2);
-	let gridClass = tempLoc.substr(5, 5);
-	let gridNum = tempSquare.substr(0, 5);
+	let squareIdNoHash = $(this).attr('id');
+	let squareId = `#${squareIdNoHash}`;
+	let fullClass = $(this).attr('class');
+	let loc = fullClass.substr(fullClass.length - 2);
+	let gridClass = fullClass.substr(5, 5);
+	let gridNum = squareIdNoHash.substr(0, 5);
 
-	if ($(square).text() == '' && !($(`.${gridClass}`).css('background-color') == 'rgb(128, 128, 128)') && !($('#turn').text() == 'X Wins' || $('#turn').text() == 'O Wins')) {
-		handleClick(square, loc, gridNum);
+	if (
+		$(squareId).text() == '' &&
+		!($(`.${gridClass}`).css('background-color') == 'rgb(128, 128, 128)') &&
+		!($('#turn').text() == 'X Wins' || $('#turn').text() == 'O Wins')
+	) {
+		handleClick(squareId, loc, gridNum);
 	}
 });
 
@@ -133,13 +137,13 @@ $('body').on('click', '#rules-box', function() {
 	$('#rules-box').addClass('hidden');
 });
 
-function handleClick(square, loc, gridNum) {
+function handleClick(squareId, loc, gridNum) {
 	if (turn === 'X') {
-		$(square).text('X');
+		$(squareId).text('X');
 		gameBoard[gridNum][loc] = 'X';
 		checkForSquare(gridNum, loc);
 	} else {
-		$(square).text('O');
+		$(squareId).text('O');
 		gameBoard[gridNum][loc] = 'O';
 		checkForSquare(gridNum, loc);
 	}
@@ -190,6 +194,27 @@ function checkForSquare(gridNum, loc) {
 		if (!($('#turn').text() == 'X Wins' || $('#turn').text() == 'O Wins')) {
 			nextTurn(loc);
 		}
+	} else if (
+		gameBoard[gridNum].A1 != '' &&
+		gameBoard[gridNum].A2 != '' &&
+		gameBoard[gridNum].A3 != '' &&
+		gameBoard[gridNum].B1 != '' &&
+		gameBoard[gridNum].B2 != '' &&
+		gameBoard[gridNum].B3 != '' &&
+		gameBoard[gridNum].C1 != '' &&
+		gameBoard[gridNum].C2 != '' &&
+		gameBoard[gridNum].C3 != ''
+	) {
+		gameBoard.bigGrid[gridNum] = 'Tie';
+		if (turn == 'X') {
+			turn = 'O';
+			$('#turn').text(`O's Turn`);
+			nextTurn(loc);
+		} else {
+			turn = 'X';
+			$('#turn').text(`X's Turn`);
+			nextTurn(loc);
+		}
 	} else {
 		if (turn == 'X') {
 			turn = 'O';
@@ -227,6 +252,19 @@ function checkForWin() {
 		(gameBoard.bigGrid.grid7 == 'O' && gameBoard.bigGrid.grid5 == 'O' && gameBoard.bigGrid.grid3 == 'O')
 	) {
 		$('#turn').text(`O Wins`);
+		$('#gameBoard').css('background-color', 'rgb(128, 128, 128)');
+	} else if (
+		gameBoard.bigGrid.grid1 != '' &&
+		gameBoard.bigGrid.grid2 != '' &&
+		gameBoard.bigGrid.grid3 != '' &&
+		gameBoard.bigGrid.grid4 != '' &&
+		gameBoard.bigGrid.grid5 != '' &&
+		gameBoard.bigGrid.grid6 != '' &&
+		gameBoard.bigGrid.grid7 != '' &&
+		gameBoard.bigGrid.grid8 != '' &&
+		gameBoard.bigGrid.grid9 != ''
+	) {
+		$('#turn').text(`It's a Tie Game!`);
 		$('#gameBoard').css('background-color', 'rgb(128, 128, 128)');
 	}
 }
