@@ -128,6 +128,11 @@ $('#gameBoard').on('click', '.cell', function() {
 	}
 });
 
+$('body').on('click', '#rules-box', function() {
+	$('#rules').addClass('hidden');
+	$('#rules-box').addClass('hidden');
+});
+
 function handleClick(square, loc, gridNum) {
 	if (turn === 'X') {
 		$(square).text('X');
