@@ -15,7 +15,7 @@ body {
 	border: 3px solid black;
 	grid-gap: 0;
 }
-/*  style="font-size: 10rem; width: 19.9999rem; display: flex; justify-content: center; align-items: center;" */
+
 .grid {
 	display: grid;
 	grid-template-rows: 33.3333% 33.3333% 33.3333%;

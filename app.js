@@ -1,118 +1,21 @@
+// Registers all of the moves
 let gameBoard = {
-	bigGrid : {
-		grid1 : '',
-		grid2 : '',
-		grid3 : '',
-		grid4 : '',
-		grid5 : '',
-		grid6 : '',
-		grid7 : '',
-		grid8 : '',
-		grid9 : ''
-	},
-	grid1   : {
-		A1 : '',
-		A2 : '',
-		A3 : '',
-		B1 : '',
-		B2 : '',
-		B3 : '',
-		C1 : '',
-		C2 : '',
-		C3 : ''
-	},
-	grid2   : {
-		A1 : '',
-		A2 : '',
-		A3 : '',
-		B1 : '',
-		B2 : '',
-		B3 : '',
-		C1 : '',
-		C2 : '',
-		C3 : ''
-	},
-	grid3   : {
-		A1 : '',
-		A2 : '',
-		A3 : '',
-		B1 : '',
-		B2 : '',
-		B3 : '',
-		C1 : '',
-		C2 : '',
-		C3 : ''
-	},
-	grid4   : {
-		A1 : '',
-		A2 : '',
-		A3 : '',
-		B1 : '',
-		B2 : '',
-		B3 : '',
-		C1 : '',
-		C2 : '',
-		C3 : ''
-	},
-	grid5   : {
-		A1 : '',
-		A2 : '',
-		A3 : '',
-		B1 : '',
-		B2 : '',
-		B3 : '',
-		C1 : '',
-		C2 : '',
-		C3 : ''
-	},
-	grid6   : {
-		A1 : '',
-		A2 : '',
-		A3 : '',
-		B1 : '',
-		B2 : '',
-		B3 : '',
-		C1 : '',
-		C2 : '',
-		C3 : ''
-	},
-	grid7   : {
-		A1 : '',
-		A2 : '',
-		A3 : '',
-		B1 : '',
-		B2 : '',
-		B3 : '',
-		C1 : '',
-		C2 : '',
-		C3 : ''
-	},
-	grid8   : {
-		A1 : '',
-		A2 : '',
-		A3 : '',
-		B1 : '',
-		B2 : '',
-		B3 : '',
-		C1 : '',
-		C2 : '',
-		C3 : ''
-	},
-	grid9   : {
-		A1 : '',
-		A2 : '',
-		A3 : '',
-		B1 : '',
-		B2 : '',
-		B3 : '',
-		C1 : '',
-		C2 : '',
-		C3 : ''
-	}
+	bigGrid : { grid1: '', grid2: '', grid3: '', grid4: '', grid5: '', grid6: '', grid7: '', grid8: '', grid9: '' },
+	grid1   : { A1: '', A2: '', A3: '', B1: '', B2: '', B3: '', C1: '', C2: '', C3: '' },
+	grid2   : { A1: '', A2: '', A3: '', B1: '', B2: '', B3: '', C1: '', C2: '', C3: '' },
+	grid3   : { A1: '', A2: '', A3: '', B1: '', B2: '', B3: '', C1: '', C2: '', C3: '' },
+	grid4   : { A1: '', A2: '', A3: '', B1: '', B2: '', B3: '', C1: '', C2: '', C3: '' },
+	grid5   : { A1: '', A2: '', A3: '', B1: '', B2: '', B3: '', C1: '', C2: '', C3: '' },
+	grid6   : { A1: '', A2: '', A3: '', B1: '', B2: '', B3: '', C1: '', C2: '', C3: '' },
+	grid7   : { A1: '', A2: '', A3: '', B1: '', B2: '', B3: '', C1: '', C2: '', C3: '' },
+	grid8   : { A1: '', A2: '', A3: '', B1: '', B2: '', B3: '', C1: '', C2: '', C3: '' },
+	grid9   : { A1: '', A2: '', A3: '', B1: '', B2: '', B3: '', C1: '', C2: '', C3: '' }
 };
+
 let turn = 'X';
 let allowedRegion = '';
 
+// sets up all variables for the move, checks to see if the move is legal, passes onto the next function
 $('#gameBoard').on('click', '.cell', function() {
 	event.preventDefault();
 
@@ -132,11 +35,13 @@ $('#gameBoard').on('click', '.cell', function() {
 	}
 });
 
+// Goes to the game after reading the rules
 $('body').on('click', '#rules-box', function() {
 	$('#rules').addClass('hidden');
 	$('#rules-box').addClass('hidden');
 });
 
+// Looks for whose turn it is, marks & registers square, passes the info to the next function
 function handleClick(squareId, loc, gridNum) {
 	if (turn === 'X') {
 		$(squareId).text('X');
@@ -149,6 +54,7 @@ function handleClick(squareId, loc, gridNum) {
 	}
 }
 
+// Checks to see if the 3x3 grid has a tic-tac-toe
 function checkForSquare(gridNum, loc) {
 	if (
 		(gameBoard[gridNum].A1 == 'X' && gameBoard[gridNum].A2 == 'X' && gameBoard[gridNum].A3 == 'X') ||
@@ -228,6 +134,7 @@ function checkForSquare(gridNum, loc) {
 	}
 }
 
+// checks to see if the overall 9x9 grid has a tic-tac-toe
 function checkForWin() {
 	if (
 		(gameBoard.bigGrid.grid1 == 'X' && gameBoard.bigGrid.grid2 == 'X' && gameBoard.bigGrid.grid3 == 'X') ||
@@ -269,9 +176,9 @@ function checkForWin() {
 	}
 }
 
+// blocks off inaccessible regions due to turn rules
 function nextTurn(loc) {
 	allowedRegion = loc;
-	console.log(allowedRegion);
 	if (allowedRegion == 'A1') {
 		if (gameBoard.bigGrid.grid1 == '') {
 			$('.cell').css('background-color', 'rgb(128, 128, 128)');
