@@ -9,7 +9,7 @@
 <body>
     <main>
         <div id="rules">
-            <div id="rules-box">
+            <div id="rules-box" onclick="hideRules()">
                 This is Tic-Tac-Tic-Tac-Toe. The object is to get tic-tac-toes on the smaller boards in order to get a tic-tac-toe on the large board.
                 The game starts with the X player playing on any of the smaller boards. The O player then plays an O on the smaller board relative to
                 the placement of the X. For example, if the X player places an X on the top-left corner of the center board, the O player must play on
@@ -18,159 +18,125 @@
         </div>
         <h1 id="turn">X's Turn</h1>
         <div id="gameBoard">
-                <div id="grid1" class="grid">
-                        <div class="cell grid1 A1" id="grid1-A1"></div>
-                        <div class="cell grid1 A2" id="grid1-A2"></div>
-                        <div class="cell grid1 A3" id="grid1-A3"></div>
+                <div id="A1" class="grid">
+                        <div class="cell A1" id="A1-A1"></div>
+                        <div class="cell A1" id="A1-A2"></div>
+                        <div class="cell A1" id="A1-A3"></div>
                     
-                        <div class="cell grid1 B1" id="grid1-B1"></div>
-                        <div class="cell grid1 B2" id="grid1-B2"></div>
-                        <div class="cell grid1 B3" id="grid1-B3"></div>
+                        <div class="cell A1" id="A1-B1"></div>
+                        <div class="cell A1" id="A1-B2"></div>
+                        <div class="cell A1" id="A1-B3"></div>
                   
-                        <div class="cell grid1 C1" id="grid1-C1"></div>
-                        <div class="cell grid1 C2" id="grid1-C2"></div>
-                        <div class="cell grid1 C3" id="grid1-C3"></div>
-                   
+                        <div class="cell A1" id="A1-C1"></div>
+                        <div class="cell A1" id="A1-C2"></div>
+                        <div class="cell A1" id="A1-C3"></div>
                 </div>
-                <div id="grid2" class="grid">
+                <div id="A2" class="grid">
+                        <div class="cell A2" id="A2-A1"></div>
+                        <div class="cell A2" id="A2-A2"></div>
+                        <div class="cell A2" id="A2-A3"></div>
                     
-                        <div class="cell grid2 A1" id="grid2-A1"></div>
-                        <div class="cell grid2 A2" id="grid2-A2"></div>
-                        <div class="cell grid2 A3" id="grid2-A3"></div>
+                        <div class="cell A2" id="A2-B1"></div>
+                        <div class="cell A2" id="A2-B2"></div>
+                        <div class="cell A2" id="A2-B3"></div>
                     
-                    
-                        <div class="cell grid2 B1" id="grid2-B1"></div>
-                        <div class="cell grid2 B2" id="grid2-B2"></div>
-                        <div class="cell grid2 B3" id="grid2-B3"></div>
-                    
-                    
-                        <div class="cell grid2 C1" id="grid2-C1"></div>
-                        <div class="cell grid2 C2" id="grid2-C2"></div>
-                        <div class="cell grid2 C3" id="grid2-C3"></div>
-                    
+                        <div class="cell A2" id="A2-C1"></div>
+                        <div class="cell A2" id="A2-C2"></div>
+                        <div class="cell A2" id="A2-C3"></div>
                 </div>
-                <div id="grid3" class="grid">
+                <div id="A3" class="grid">
+                        <div class="cell A3" id="A3-A1"></div>
+                        <div class="cell A3" id="A3-A2"></div>
+                        <div class="cell A3" id="A3-A3"></div>
                     
-                        <div class="cell grid3 A1" id="grid3-A1"></div>
-                        <div class="cell grid3 A2" id="grid3-A2"></div>
-                        <div class="cell grid3 A3" id="grid3-A3"></div>
+                        <div class="cell A3" id="A3-B1"></div>
+                        <div class="cell A3" id="A3-B2"></div>
+                        <div class="cell A3" id="A3-B3"></div>
                     
-                    
-                        <div class="cell grid3 B1" id="grid3-B1"></div>
-                        <div class="cell grid3 B2" id="grid3-B2"></div>
-                        <div class="cell grid3 B3" id="grid3-B3"></div>
-                    
-                    
-                        <div class="cell grid3 C1" id="grid3-C1"></div>
-                        <div class="cell grid3 C2" id="grid3-C2"></div>
-                        <div class="cell grid3 C3" id="grid3-C3"></div>
+                        <div class="cell A3" id="A3-C1"></div>
+                        <div class="cell A3" id="A3-C2"></div>
+                        <div class="cell A3" id="A3-C3"></div>
                     
                 </div>
-                <div id="grid4" class="grid">
+                <div id="B1" class="grid">
+                        <div class="cell B1" id="B1-A1"></div>
+                        <div class="cell B1" id="B1-A2"></div>
+                        <div class="cell B1" id="B1-A3"></div>
                     
-                        <div class="cell grid4 A1" id="grid4-A1"></div>
-                        <div class="cell grid4 A2" id="grid4-A2"></div>
-                        <div class="cell grid4 A3" id="grid4-A3"></div>
+                        <div class="cell B1" id="B1-B1"></div>
+                        <div class="cell B1" id="B1-B2"></div>
+                        <div class="cell B1" id="B1-B3"></div>
                     
-                    
-                        <div class="cell grid4 B1" id="grid4-B1"></div>
-                        <div class="cell grid4 B2" id="grid4-B2"></div>
-                        <div class="cell grid4 B3" id="grid4-B3"></div>
-                    
-                    
-                        <div class="cell grid4 C1" id="grid4-C1"></div>
-                        <div class="cell grid4 C2" id="grid4-C2"></div>
-                        <div class="cell grid4 C3" id="grid4-C3"></div>
-                    
+                        <div class="cell B1" id="B1-C1"></div>
+                        <div class="cell B1" id="B1-C2"></div>
+                        <div class="cell B1" id="B1-C3"></div>
                 </div>
-                <div id="grid5" class="grid">
+                <div id="B2" class="grid">
+                        <div class="cell B2" id="B2-A1"></div>
+                        <div class="cell B2" id="B2-A2"></div>
+                        <div class="cell B2" id="B2-A3"></div>
                     
-                        <div class="cell grid5 A1" id="grid5-A1"></div>
-                        <div class="cell grid5 A2" id="grid5-A2"></div>
-                        <div class="cell grid5 A3" id="grid5-A3"></div>
+                        <div class="cell B2" id="B2-B1"></div>
+                        <div class="cell B2" id="B2-B2"></div>
+                        <div class="cell B2" id="B2-B3"></div>
                     
-                    
-                        <div class="cell grid5 B1" id="grid5-B1"></div>
-                        <div class="cell grid5 B2" id="grid5-B2"></div>
-                        <div class="cell grid5 B3" id="grid5-B3"></div>
-                    
-                    
-                        <div class="cell grid5 C1" id="grid5-C1"></div>
-                        <div class="cell grid5 C2" id="grid5-C2"></div>
-                        <div class="cell grid5 C3" id="grid5-C3"></div>
-                    
+                        <div class="cell B2" id="B2-C1"></div>
+                        <div class="cell B2" id="B2-C2"></div>
+                        <div class="cell B2" id="B2-C3"></div>
                 </div>
-                <div id="grid6" class="grid">
+                <div id="B3" class="grid">
+                        <div class="cell B3" id="B3-A1"></div>
+                        <div class="cell B3" id="B3-A2"></div>
+                        <div class="cell B3" id="B3-A3"></div>
                     
-                        <div class="cell grid6 A1" id="grid6-A1"></div>
-                        <div class="cell grid6 A2" id="grid6-A2"></div>
-                        <div class="cell grid6 A3" id="grid6-A3"></div>
+                        <div class="cell B3" id="B3-B1"></div>
+                        <div class="cell B3" id="B3-B2"></div>
+                        <div class="cell B3" id="B3-B3"></div>
                     
-                    
-                        <div class="cell grid6 B1" id="grid6-B1"></div>
-                        <div class="cell grid6 B2" id="grid6-B2"></div>
-                        <div class="cell grid6 B3" id="grid6-B3"></div>
-                    
-                    
-                        <div class="cell grid6 C1" id="grid6-C1"></div>
-                        <div class="cell grid6 C2" id="grid6-C2"></div>
-                        <div class="cell grid6 C3" id="grid6-C3"></div>
-                    
+                        <div class="cell B3" id="B3-C1"></div>
+                        <div class="cell B3" id="B3-C2"></div>
+                        <div class="cell B3" id="B3-C3"></div>
                 </div>
-                <div id="grid7" class="grid">
+                <div id="C1" class="grid">
+                        <div class="cell C1" id="C1-A1"></div>
+                        <div class="cell C1" id="C1-A2"></div>
+                        <div class="cell C1" id="C1-A3"></div>
                     
-                        <div class="cell grid7 A1" id="grid7-A1"></div>
-                        <div class="cell grid7 A2" id="grid7-A2"></div>
-                        <div class="cell grid7 A3" id="grid7-A3"></div>
+                        <div class="cell C1" id="C1-B1"></div>
+                        <div class="cell C1" id="C1-B2"></div>
+                        <div class="cell C1" id="C1-B3"></div>
                     
-                    
-                        <div class="cell grid7 B1" id="grid7-B1"></div>
-                        <div class="cell grid7 B2" id="grid7-B2"></div>
-                        <div class="cell grid7 B3" id="grid7-B3"></div>
-                    
-                    
-                        <div class="cell grid7 C1" id="grid7-C1"></div>
-                        <div class="cell grid7 C2" id="grid7-C2"></div>
-                        <div class="cell grid7 C3" id="grid7-C3"></div>
-                    
+                        <div class="cell C1" id="C1-C1"></div>
+                        <div class="cell C1" id="C1-C2"></div>
+                        <div class="cell C1" id="C1-C3"></div>
                 </div>
-                <div id="grid8" class="grid">
+                <div id="C2" class="grid">
+                        <div class="cell C2" id="C2-A1"></div>
+                        <div class="cell C2" id="C2-A2"></div>
+                        <div class="cell C2" id="C2-A3"></div>
                     
-                        <div class="cell grid8 A1" id="grid8-A1"></div>
-                        <div class="cell grid8 A2" id="grid8-A2"></div>
-                        <div class="cell grid8 A3" id="grid8-A3"></div>
+                        <div class="cell C2" id="C2-B1"></div>
+                        <div class="cell C2" id="C2-B2"></div>
+                        <div class="cell C2" id="C2-B3"></div>
                     
-                    
-                        <div class="cell grid8 B1" id="grid8-B1"></div>
-                        <div class="cell grid8 B2" id="grid8-B2"></div>
-                        <div class="cell grid8 B3" id="grid8-B3"></div>
-                    
-                    
-                        <div class="cell grid8 C1" id="grid8-C1"></div>
-                        <div class="cell grid8 C2" id="grid8-C2"></div>
-                        <div class="cell grid8 C3" id="grid8-C3"></div>
-                    
+                        <div class="cell C2" id="C2-C1"></div>
+                        <div class="cell C2" id="C2-C2"></div>
+                        <div class="cell C2" id="C2-C3"></div>
                 </div>
-                <div id="grid9" class="grid">
+                <div id="C3" class="grid">
+                        <div class="cell C3" id="C3-A1"></div>
+                        <div class="cell C3" id="C3-A2"></div>
+                        <div class="cell C3" id="C3-A3"></div>
                     
-                        <div class="cell grid9 A1" id="grid9-A1"></div>
-                        <div class="cell grid9 A2" id="grid9-A2"></div>
-                        <div class="cell grid9 A3" id="grid9-A3"></div>
+                        <div class="cell C3" id="C3-B1"></div>
+                        <div class="cell C3" id="C3-B2"></div>
+                        <div class="cell C3" id="C3-B3"></div>
                     
-                    
-                        <div class="cell grid9 B1" id="grid9-B1"></div>
-                        <div class="cell grid9 B2" id="grid9-B2"></div>
-                        <div class="cell grid9 B3" id="grid9-B3"></div>
-                    
-                    
-                        <div class="cell grid9 C1" id="grid9-C1"></div>
-                        <div class="cell grid9 C2" id="grid9-C2"></div>
-                        <div class="cell grid9 C3" id="grid9-C3"></div>
-                    
-                </div>
-            
-        </div>
-        
+                        <div class="cell C3" id="C3-C1"></div>
+                        <div class="cell C3" id="C3-C2"></div>
+                        <div class="cell C3" id="C3-C3"></div>
+                </div>            
+        </div>        
     </main>
     
     <script
